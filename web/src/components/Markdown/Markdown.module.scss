@@ -1,0 +1,152 @@
+.markdown-viewer {
+    color: var(--text-main);
+    font-size: 16px;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+        margin: 24px 0 12px 0;
+    }
+    h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    h4 {
+        font-size: 16px;
+    }
+    h5 {
+        font-size: 14px;
+    }
+    h6 {
+        font-size: 13.6px;
+        // color: #a1a1aa;
+        font-weight: 600;
+    }
+
+    p {
+        font-weight: 400;
+        margin-bottom: 12px;
+        /* line-height: 20px; js-учебник */
+        line-height: 22px;
+    }
+
+    ol, ul {
+        /* padding-left: 21px; js-учебник*/ 
+        padding-left: 2em;
+        margin-bottom: 22px;
+    }
+    ol {
+        list-style-type: decimal;
+    }
+    ul {
+        list-style: none;
+
+        li {
+            line-height: 22px;
+
+            &::before {
+                color: var(--text-main);
+                content: "●";
+                float: left;
+                font-size: 8px;
+                margin-left: -20px;
+            }
+        }
+        li+li {
+            margin-top: .25em;
+        }
+
+        &.contains-task-list {
+            position: relative;
+
+            .task-list-item {
+                &::before {
+                    content: none;
+                }
+                input {
+                    margin: 0 .2em .25em -1.4em;
+                    vertical-align: middle;
+                }
+            }   
+        }
+    }
+
+    table {
+        border: 1px solid #52525b;
+        border-radius: 4px;
+        display: block;
+        margin-bottom: 12px;
+
+        thead tr {
+            background-color: #303036;
+            border-bottom: 1px solid #52525b;
+            border-top: none;
+        }
+        th, td {
+            padding: 6px 13px;
+            line-height: 22px;
+            text-align: start;
+            border-left: 1px solid #52525b;
+            border-top: 1px solid #52525b;
+        }
+        th {
+            font-weight: 700;
+            border-top: none;
+        }
+        thead th:first-child, tbody td:first-child {
+            border-left: none;
+        }
+    }
+    
+    hr {
+        margin: 24px 0;
+        height: 2px;
+        border-color: #52525b;
+    }
+    pre {
+        margin-bottom: 22px;
+        border-radius: 4px;
+
+        span {
+            font-size: 15px !important;
+            font-family: Consolas, Lucida Console, Menlo, Monaco, monospace !important;
+        }
+        .linenumber {
+            color: #52525b !important;
+        }
+    }
+    img {
+        width: 100%;
+    }
+}
+
+.markdown-viewer strong {
+    font-weight: bolder;
+}
+.markdown-viewer em {
+    font-style: italic;
+}
+.markdown-viewer a {
+    text-decoration: none;
+    /* color: rgb(132, 160, 239); js-учебник */
+    color: rgb(132, 160, 239);
+    font-weight: 400;
+}
+.markdown-viewer a:hover {
+    text-decoration: underline;
+}
+.markdown-viewer code:not(pre code) {
+    background-color: #ececec;
+    color: rgb(13, 13, 13);
+    border-radius: 2px;
+    padding: 2px 4px;
+    font-size: 14px;
+    // font-weight: 500;
+    font-family: Consolas, Lucida Console, Menlo, Monaco, monospace;
+}

@@ -1,0 +1,28 @@
+.audio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    color: #2357a8;
+    transition: all 0.3s ease;
+
+    &.listening {
+        animation: pulse 5s infinite;
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+}

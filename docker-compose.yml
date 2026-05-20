@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: server
+    build:
+      context: ./server 
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - API_URL=http://localhost:3001
+      - CLIENT_URL=http://localhost:3000
+      # write your key:
+      - OPENAI_API_KEY=sk-or-v1-your-api-key
+    restart: always
+
+  frontend:
+    container_name: web
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: always
+    depends_on:
+      - backend
